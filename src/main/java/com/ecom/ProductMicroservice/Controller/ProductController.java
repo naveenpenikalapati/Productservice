@@ -1,9 +1,8 @@
-package com.ecom.ProductMicroservice;
+package com.ecom.ProductMicroservice.Controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.EcomOrderMicroservice.order.OrderUpdateDTO;
-import com.EcomOrderMicroservice.order.ProductModel;
+import com.ecom.ProductMicroservice.DTO.OrderUpdateDTO;
+import com.ecom.ProductMicroservice.DTO.OrderWithProductsDTO;
+import com.ecom.ProductMicroservice.DTO.ProductDTO;
+import com.ecom.ProductMicroservice.Service.ProductService;
 
 @RestController
 public class ProductController {
@@ -30,9 +31,8 @@ public class ProductController {
 		return ResponseEntity.ok("Products saved successfully");
 	}
 	
-	
 	@GetMapping("/products/byorder/{orderid}")    //linked - method from ProductFeignClient of OrderMicroservice
-	public List<com.ecom.ProductMicroservice.ProductModel> getProductsForOrder(@PathVariable("orderid")int orderid)
+	public List<com.ecom.ProductMicroservice.Entity.ProductModel> getProductsForOrder(@PathVariable("orderid")int orderid)
 	{
 		return ProductService.getProductsForOrder(orderid);
 	}
@@ -62,7 +62,7 @@ public class ProductController {
 	
 	// Search Orders by Product Category
 	@GetMapping("/search")
-	public List<com.ecom.ProductMicroservice.ProductModel> searchProducts(@RequestParam("category") String category)
+	public List<com.ecom.ProductMicroservice.Entity.ProductModel> searchProducts(@RequestParam("category") String category)
 	{
 		return ProductService.searchProducts(category);
 	}

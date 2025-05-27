@@ -1,4 +1,4 @@
-package com.ecom.ProductMicroservice;
+package com.ecom.ProductMicroservice.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,16 +12,35 @@ import lombok.Data;
 @Data
 public class ProductModel {
     
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "productid")
     private int productID;
     private String category;
     private int amount;
     private int orderId;
+    //private String paymentStatus;
     @Version
     private int version;
+    
+    
+    
+	public ProductModel(int productID, String category, int amount, int orderId) 
+	{
+		this.productID = productID;
+		this.category = category;
+		this.amount = amount;
+		this.orderId = orderId;
+		this.version = version;
+	}
 
+	public ProductModel() 
+	{
+		
+	}
+
+
+    
     // Direct reference to the order ID (no FK constraint)
 //    @Column(name = "order_id", nullable = false)
 //    private int orderId;

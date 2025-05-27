@@ -1,10 +1,12 @@
-package com.ecom.ProductMicroservice;
+package com.ecom.ProductMicroservice.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.ecom.ProductMicroservice.Entity.ProductModel;
 
 @Repository
 public interface ProductRepo extends JpaRepository<ProductModel,Integer>

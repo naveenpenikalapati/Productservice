@@ -1,4 +1,4 @@
-package com.ecom.ProductMicroservice;
+package com.ecom.ProductMicroservice.Repository;
 
 import java.util.List;
 
@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
+
+import com.ecom.ProductMicroservice.Entity.OrderModel;
 
 
 @Repository
