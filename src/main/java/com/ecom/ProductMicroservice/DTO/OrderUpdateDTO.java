@@ -1,4 +1,4 @@
-package com.ecom.ProductMicroservice;
+package com.ecom.ProductMicroservice.DTO;
 
 
 public class OrderUpdateDTO 

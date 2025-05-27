@@ -1,4 +1,4 @@
-package com.ecom.ProductMicroservice;
+package com.ecom.ProductMicroservice.Entity;
 
 import java.util.List;
 
@@ -27,7 +27,7 @@ public class OrderModel
       private String Customer;
       private int   orderQuantity;
       private long  mobno;
-      
+      private String paymentStatus;
       @Transient
       private List<ProductModel> products;
       

@@ -1,11 +1,13 @@
 
-package com.ecom.ProductMicroservice;
+package com.ecom.ProductMicroservice.Feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.ecom.ProductMicroservice.Entity.OrderModel;
 
 @FeignClient(name="orderdetails")
 public interface OrderFeignClient       

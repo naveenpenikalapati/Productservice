@@ -1,6 +1,9 @@
-package com.ecom.ProductMicroservice;
+package com.ecom.ProductMicroservice.DTO;
 
 import java.util.List;
+
+import com.ecom.ProductMicroservice.Entity.OrderModel;
+import com.ecom.ProductMicroservice.Entity.ProductModel;
 
 import lombok.Data;
 
